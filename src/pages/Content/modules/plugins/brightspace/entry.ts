@@ -164,7 +164,9 @@ export default async function BrightspaceEntrypoint() {
   root.textContent = 'Tasks for D2L Brightspace';
   root.className = 'd2l-tile d2l-widget';
   setStyles();
-  document.querySelector('.homepage-col-4')?.prepend(root);
+  const firstRow = document.querySelector('.homepage-container .homepage-row');
+  const rightMostCol = firstRow?.querySelectorAll('[class*="homepage-col-"]');
+  rightMostCol?.[rightMostCol.length - 1]?.prepend(root);
   runApp(root, BrightspaceLMSConfig, await getOptions());
   setColorPickers();
 }
