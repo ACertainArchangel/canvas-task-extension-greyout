@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AssignmentType, FinalAssignment } from '../../types';
 import { AssignmentDefaults } from '../../constants';
@@ -12,6 +12,7 @@ export interface AnimatedProps {
   static?: boolean;
   opacity?: number;
   height?: number;
+  filter?: string;
 }
 
 export const TaskContainer = styled.div.attrs(
@@ -20,6 +21,7 @@ export const TaskContainer = styled.div.attrs(
         height: props.height ? props.height : 0,
         margin: props.opacity ? 5 * props.opacity : 0,
         opacity: props.opacity ? props.opacity : 0,
+        filter: props.filter || 'none',
       },
     })
   )<AnimatedProps & DarkProps>`
@@ -251,11 +253,28 @@ export default function TaskCard({
     AssignmentType.NOTE,
     AssignmentType.GRADESCOPE,
   ].includes(assignment.type);
+
+  // Deferred/greyout state - persisted in localStorage
+  const [deferred, setDeferred] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('tfc_deferred_' + assignment.id) || 'false') || false;
+    } catch {
+      return false;
+    }
+  });
+
+  function toggleDeferred() {
+    const newVal = !deferred;
+    setDeferred(newVal);
+    localStorage.setItem('tfc_deferred_' + assignment.id, JSON.stringify(newVal));
+  }
+
   return (
     <TaskContainer
       dark={darkMode}
       height={transitionState ? transitionState?.height : 65}
-      opacity={transitionState ? transitionState?.opacity : 1}
+      opacity={deferred ? 0.5 : (transitionState ? transitionState?.opacity : 1)}
+      filter={deferred ? 'grayscale(100%)' : undefined}
     >
       <TaskLeft
         color={
@@ -281,6 +300,18 @@ export default function TaskCard({
           ) : (
             ''
           )}
+          <input
+            type="checkbox"
+            checked={deferred}
+            onChange={toggleDeferred}
+            title="Defer / grey out this task"
+            style={{
+              width: '14px',
+              height: '14px',
+              marginLeft: '6px',
+              cursor: 'pointer',
+            }}
+          />
           {!skeleton && complete && canBeDeleted ? (
             <CheckIcon
               checkStyle="X"

@@ -1,8 +1,0 @@
-This extension is based on the open-source project “Tasks for Canvas”
-by Jeffrey Cheng, licensed under the MIT License.
-
-Modifications in this fork include:
-- Added visual grey-out behavior for tasks
-- Minor UI behavior changes
-
-This fork is unofficial and not affiliated with the original author.
