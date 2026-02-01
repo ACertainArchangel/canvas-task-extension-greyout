@@ -18,12 +18,10 @@
    "icons": {
       "128": "icon-128.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAinmT4iurSj31gMo7k0FUPwlBEX9DNircF9pBLZXmM2zB0DB6ASGZRRbsILRHAGJZimPII4jfJHtRcl6fwyhQRuP/a8PD4rchhsKM13B8W2z+1R/X70UlDJpB2thHiZ2X4T6smIQD8qTT9QIZASG+oQZK7R3hF1tJleAeupM8Nad1uGFx9Lobzke8p3o2h/bXUTcnL18zWVbPftzZsB+FfBWmJ2axLLLFHuIYPL64Sz1cWFrQE7hV2stk0Cv5OmsZzfwsDSYRO7MTK3vBTC4urKhmTz1u8RZI2yUaKyl+2NgvZFxQaHQ1GJGwUuGvvHf7YNf1D0aFwuAlKYN2x0DSJwIDAQAB",
    "manifest_version": 3,
    "name": "Tasks for Canvas (Grey-Out Edition)",
    "options_page": "options.html",
    "permissions": [ "storage" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.5.4",
    "web_accessible_resources": [ {
       "matches": [ "https://*/*" ],
