@@ -1,61 +1,51 @@
-# Tasks Browser Extension for Canvas Instructure
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R8FV70G)
+# Tasks for Canvas – Grey-Out Fork
 
-Ever had trouble finding your weekly assignments? Wish you had a nice progress bar to motivate you to complete everything?
+This repository contains an **unofficial fork** of the open-source **Tasks for Canvas** browser extension.
 
-No? Well either way, the **Tasks Browser Extension for Canvas** is here to help!
+👉 **Original project:**  
+https://github.com/UseBetterCanvas/canvas-task-extension
 
-## Download
-[![Download for Chrome](https://img.shields.io/badge/Download_for-Chrome-4c8bf5?style=for-the-badge&logo=Googlechrome)](https://chrome.google.com/webstore/detail/tasks-for-canvas/kabafodfnabokkkddjbnkgbcbmipdlmb)
-[![Download for Firefox](https://img.shields.io/badge/Download_for-Firefox-ff9400?style=for-the-badge&logo=Firefoxbrowser&logoColor=White)](https://addons.mozilla.org/en-US/firefox/addon/tasks-for-canvas)<br>
-Edge, Opera, and Vivaldi are compatible with the Chrome version.
-## Features
+All credit for the original design, functionality, and ongoing development belongs to the original author and contributors.
 
-### Stay on Track
+---
 
-Colorful task items ensure that you'll never miss an assignment again.
+## Why this fork exists
 
-![](screenshots/Screenshot1.png)
+This fork exists somewhat backwards compared to a typical open-source workflow.
 
-### Track Your Progress
+I originally made this modification for personal use, by surgically editing the *compiled production build* of the extension to add a visual **grey-out behavior** for tasks. At the time, I had not yet realized that a clean, open-source version of the project was available on GitHub — which would have been a far more pleasant experience to modify.
 
-Visual progress bars for each of your courses show how far you are in completing your assignments this week.
+Once I discovered that the project was open source and MIT licensed, it felt wrong to keep such a useful modification private, especially given how much it's improved my own experiance on canvas. This repository and accompanying Chrome Web Store release are the result of cleaning up and redistributing that change.
 
-![](screenshots/Screenshot2.png)
+Also note that the copy of the uncompiled code in this repo is unmodified, and the grey-out behavior is implemented in the folder labeled 1.5.4_0 which is a production build modified from the original 1.5.4 release.
 
-### Make It Your Own
+---
 
-Task items and progress bars correspond with your chosen dashboard colors and positions.
+## What this fork changes
 
-![](screenshots/Screenshot3.png)
+This fork focuses on a **single, targeted behavior change**:
 
-### Notes
+- Adds a visual grey-out check box to completed or inactive tasks to reduce cognitive noise
+- Preserves all original functionality and user interface elements
+- Does not introduce new permissions, tracking, or data collection
 
-- The sidebar only works in Card View and Recent Activity.
-- Only courses that have assignments will appear in the chart.
-  - Alternatively, you can choose to show all dashboard courses in the options page.
-    - To change your dashboard courses, go to **Courses** in the left sidebar, go to **All Courses** and star the classes that you want on your dashboard.
-- The **Unfinished** assignments list will show all assignments from the dashboard courses that are both unsubmitted and ungraded or have a grade of 0.
+The goal is not to be a long term divergence from the original project, but to offer a small usability enhancement that some may find extremely helpful as I have.
 
-## Installing and Running for Development
+---
 
-### Procedures:
+## Relationship to the upstream project
 
-1. Check if your [Node.js](https://nodejs.org/) version is >= **10.13**.
-2. Clone this repository.
-3. Run `npm install` to install the dependencies.
-4. Run `npm start`
-5. If on Chrome: Load the extension following:
-   1. Access `chrome://extensions/`
-   2. Check `Developer mode`
-   3. Click on `Load unpacked extension`
-   4. Select the `build` folder.
-5. If on Firefox: Load the extension following:
-   1. Copy `canvas-task-extension-main/src/manifest-firefox.json` to `canvas-task-extension-main/build/manifest.json`
-   2. Access `about:debugging`
-   3. Click on `This Firefox`
-   4. Click `Load Temporary Add-on`
-   5. Select the `build` folder and click on `manifest.json`
-7. Happy hacking.
+- This fork is **unofficial**
+- It is **not affiliated with or endorsed by** the original author
+- All upstream credit and licensing are preserved
+- Users looking for the canonical version should use the original repository linked above
 
-Built with [Chrome Extension Boilerplate with React 17 and Webpack 5](https://github.com/lxieyang/chrome-extension-boilerplate-react.git)
+If this modification proves broadly useful, it would likely be better suited as an upstream contribution rather than a long-lived fork.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**, in accordance with the original project.
+
+See the `LICENSE` file for details.
