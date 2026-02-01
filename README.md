@@ -17,7 +17,8 @@ I originally made this modification for personal use, by surgically editing the 
 
 Once I discovered that the project was open source and MIT licensed, it felt wrong to keep such a useful modification private, especially given how much it's improved my own experiance on canvas. This repository and accompanying Chrome Web Store release are the result of cleaning up and redistributing that change.
 
-Also note that the copy of the uncompiled code in this repo is unmodified, and the grey-out behavior is implemented in the folder labeled 1.5.4_0 which is a production build modified from the original 1.5.4 release.
+After initially implementing the grey-out behavior by directly modifying the compiled production build, I later updated the uncompiled source (`src`) to faithfully reflect those same changes. The repository now includes both the modified source code and the corresponding production build, ensuring that the published extension behavior is fully represented in readable source form.
+
 
 ---
 

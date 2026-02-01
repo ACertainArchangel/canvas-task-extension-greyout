@@ -1,1 +1,32 @@
-{"description":"An unofficial fork of the Tasks for Canvas extension, adding visual grey-out of completed or inactive tasks.","version":"1.5.4","manifest_version":3,"name":"Tasks for Canvas (Grey-Out Edition)","action":{"default_popup":"popup.html"},"options_page":"options.html","background":{"service_worker":"background.bundle.js"},"permissions":["storage"],"icons":{"128":"icon-128.png"},"content_scripts":[{"matches":["https://*/*"],"js":["contentScript.bundle.js"],"css":["content.styles.css"],"all_frames":true}],"web_accessible_resources":[{"resources":["icon-128.png","options.html"],"matches":["https://*/*"]}],"content_security_policy":{"extension_pages":"script-src 'self'; object-src 'self'"}}
+{
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "background.bundle.js"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "content.styles.css" ],
+      "js": [ "contentScript.bundle.js" ],
+      "matches": [ "https://*/*" ]
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "description": "An unofficial fork of the Tasks for Canvas extension, adding visual grey-out of completed or inactive tasks.",
+   "icons": {
+      "128": "icon-128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAinmT4iurSj31gMo7k0FUPwlBEX9DNircF9pBLZXmM2zB0DB6ASGZRRbsILRHAGJZimPII4jfJHtRcl6fwyhQRuP/a8PD4rchhsKM13B8W2z+1R/X70UlDJpB2thHiZ2X4T6smIQD8qTT9QIZASG+oQZK7R3hF1tJleAeupM8Nad1uGFx9Lobzke8p3o2h/bXUTcnL18zWVbPftzZsB+FfBWmJ2axLLLFHuIYPL64Sz1cWFrQE7hV2stk0Cv5OmsZzfwsDSYRO7MTK3vBTC4urKhmTz1u8RZI2yUaKyl+2NgvZFxQaHQ1GJGwUuGvvHf7YNf1D0aFwuAlKYN2x0DSJwIDAQAB",
+   "manifest_version": 3,
+   "name": "Tasks for Canvas (Grey-Out Edition)",
+   "options_page": "options.html",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.5.4",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*/*" ],
+      "resources": [ "icon-128.png", "options.html" ]
+   } ]
+}
