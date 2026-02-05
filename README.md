@@ -5,6 +5,9 @@ This repository contains an **unofficial fork** of the open-source **Tasks for C
 👉 **Original project:**  
 https://github.com/UseBetterCanvas/canvas-task-extension
 
+👉 **Chrome Store Listing:**  
+https://chromewebstore.google.com/detail/iobjgdiplbeimhchihcmfbefepnpfpnk?utm_source=item-share-cb
+
 All credit for the original design, functionality, and ongoing development belongs to the original author and contributors.
 
 ---
